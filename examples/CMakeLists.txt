@@ -6,7 +6,10 @@ message("Examples to be built: ${ALL_EXAMPLES}")
 
 foreach(example ${ALL_EXAMPLES})
     add_executable(beman.transform_join_view.examples.${example})
-    target_sources(beman.transform_join_view.examples.${example} PRIVATE ${example}.cpp)
+    target_sources(
+        beman.transform_join_view.examples.${example}
+        PRIVATE ${example}.cpp
+    )
     target_link_libraries(
         beman.transform_join_view.examples.${example}
         PRIVATE beman::transform_join_view

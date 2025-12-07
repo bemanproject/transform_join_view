@@ -8,6 +8,4 @@
 
 namespace exe = beman::transform_join_view;
 
-TEST_CASE("placeholder test", "[transform_join_view]") {
-    REQUIRE(true);
-}
+TEST_CASE("placeholder test", "[transform_join_view]") { REQUIRE(true); }
