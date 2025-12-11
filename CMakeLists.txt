@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-
+set(CMAKE_VERIFY_INTERFACE_HEADER_SETS OFF)
 cmake_minimum_required(VERSION 3.25)
 
 project(
@@ -30,14 +30,14 @@ include(CTest)
 add_library(beman.transform_join_view INTERFACE)
 add_library(beman::transform_join_view ALIAS beman.transform_join_view)
 
-target_sources(beman.transform_join_view
+target_sources(
+    beman.transform_join_view
     INTERFACE
         FILE_SET HEADERS
-            BASE_DIRS include
+            BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include"
             FILES
-                beman/transform_join_view/identity.hpp
+                "${CMAKE_CURRENT_SOURCE_DIR}/include/beman/transform_join_view/identity.hpp"
 )
-
 
 target_compile_features(beman.transform_join_view INTERFACE cxx_std_20)
 
